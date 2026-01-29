@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detalle del Blog - DS Classics{% endblock %}
+
+{% block body %}
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="mb-5">
+                    <img class="img-fluid w-100 rounded mb-5" src="{{ asset('img/blog-1.jpg') }}" alt="">
+                    <h1 class="text-uppercase mb-4">Análisis Retro: La Leyenda de la Isla Fantasma</h1>
+                    <p>Hoy revisamos uno de los títulos más emblemáticos de la consola táctil. Cuando se lanzó en 2007, redefinió la forma en que interactuábamos con los juegos de aventura. El uso exclusivo del stylus fue una apuesta arriesgada pero que pagó con creces en inmersión.</p>
+                    <p>La mazmorra central, a menudo criticada por su repetitividad, ofrece en realidad un desafío de gestión de tiempo único. Volver a ella con nuevos objetos abría atajos que nos hacían sentir verdaderamente poderosos. Gráficamente, el estilo cel-shading ha envejecido maravillosamente en la pequeña pantalla.</p>
+                    <p>En conclusión, es un título imprescindible para cualquier coleccionista de DS. Si aún no lo tienes en tu estantería, te recomendamos buscar una copia original, ya que su valor no deja de aumentar año tras año.</p>
+                </div>
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">3 Comentarios</h3>
+                    <div class="d-flex mb-4">
+                        <img src="{{ asset('img/user.jpg') }}" class="img-fluid" style="width: 45px; height: 45px;">
+                        <div class="ps-3">
+                            <h6><a href="">Carlos G.</a> <small><i>01 Ene 2024</i></small></h6>
+                            <p>¡Totalmente de acuerdo! La mecánica de dibujar la ruta del barco en el mapa sigue siendo una de mis favoritas de toda la saga.</p>
+                            <button class="btn btn-sm btn-light">Responder</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light rounded p-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Deja un comentario</h3>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control bg-white border-0" placeholder="Tu Nombre" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" class="form-control bg-white border-0" placeholder="Tu Email" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control bg-white border-0" placeholder="Sitio Web" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control bg-white border-0" rows="5" placeholder="Comentario"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Enviar Comentario</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="mb-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control p-3" placeholder="Buscar juego...">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Categorías</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>RPGs</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Plataformas</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Estrategia</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Coleccionismo</a>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Post Recientes</h3>
+                    <div class="d-flex overflow-hidden mb-3">
+                        <img class="img-fluid" src="{{ asset('img/blog-1.jpg') }}" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="{{ path('detalle') }}" class="h5 d-flex align-items-center bg-light px-3 mb-0">Los juegos más raros de Nintendo DS</a>
+                    </div>
+                    <div class="d-flex overflow-hidden mb-3">
+                        <img class="img-fluid" src="{{ asset('img/blog-2.jpg') }}" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="{{ path('detalle') }}" class="h5 d-flex align-items-center bg-light px-3 mb-0">Cómo limpiar tus cartuchos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

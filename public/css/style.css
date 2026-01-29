@@ -4,6 +4,86 @@
     --secondary: #FFD33C;
     --light: #F3F3F3;
     --dark: #212121;
+
+    /* Variables dinámicas para el Modo Oscuro */
+    --bg-main: #FFFFFF;
+    --bg-card: #F3F3F3;
+    --text-main: #666666;
+    --text-titles: #212121;
+    --navbar-bg: #FFFFFF;
+}
+
+/* Definición de colores cuando el modo oscuro está activo */
+body.dark-mode {
+    --bg-main: #121212;      /* Fondo general */
+    --bg-card: #1e1e1e;      /* Tarjetas de productos/servicios */
+    --text-main: #b0b0b0;    /* Texto de párrafos */
+    --text-titles: #ffffff;  /* Títulos y nombres */
+    --navbar-bg: #1a1a1a;    /* Barra de navegación */
+    --light: #2c2c2c;
+    --dark: #f3f3f3;         /* Invertimos el dark para que brille en oscuro */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Aplicación de variables a las clases de Bootstrap/Template */
+.text-dark { color: var(--text-titles) !important; }
+.bg-light { background-color: var(--bg-card) !important; }
+.bg-white { background-color: var(--bg-main) !important; }
+
+h1, h2, h3, h4, h5, h6, .display-1, .display-5 {
+    color: var(--text-titles) !important;
+}
+
+/* --- Ajustes en componentes específicos --- */
+
+.btn {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: .5s;
+}
+
+.btn-primary { color: #FFFFFF; }
+
+.navbar-light {
+    background-color: var(--navbar-bg) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    margin-left: 30px;
+    padding: 30px 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-titles); /* Ahora cambia según el modo */
+    outline: none;
+    transition: .5s;
+}
+
+/* Tarjetas de Productos y Blog */
+.product-item, .service-item, .blog-item, .team-item {
+    background-color: var(--bg-card) !important;
+}
+
+/* Resto de tu código original (animaciones, botones play, etc) */
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: #FFFFFF;
 }
 
 [class^=flaticon-]:before,
@@ -113,7 +193,7 @@
 }
 
 .hero-header {
-    background: url(../img/hero.jpg) top right no-repeat;
+    background: url(../img/cablecera-index.png  ) top right no-repeat;
     background-size: cover;
 }
 

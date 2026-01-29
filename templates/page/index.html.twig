@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inicio - DS Classics{% endblock %}
+
+{% block body %}
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container py-5">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="display-1 text-uppercase text-dark mb-lg-4">Mundo DS</h1>
+                    <h1 class="text-uppercase text-white mb-lg-4">Revive Tu Infancia</h1>
+                    <p class="fs-4 text-white mb-lg-4">Descubre la colección más grande de juegos clásicos de Nintendo DS. Desde Pokémon hasta Zelda, recupera los momentos que marcaron tu historia.</p>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                        <a href="{{ path('game-shop') }}" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Ver Catálogo</a>
+                        <button type="button" class="btn-play" data-bs-toggle="modal"
+                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Ver Trailer</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Video Destacado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                                allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="{{ asset('img/tiendaDS-logo.jpeg') }}" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="border-start border-5 border-primary ps-5 mb-5">
+                        <h6 class="text-primary text-uppercase">Sobre Nosotros</h6>
+                        <h1 class="display-5 text-uppercase mb-0">Mantenemos viva la historia de los videojuegos</h1>
+                    </div>
+                    <h4 class="text-body mb-4">Especialistas en preservación, restauración y venta de títulos originales de Nintendo DS. Calidad garantizada en cada cartucho.</h4>
+                    <div class="bg-light p-4">
+                        <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item w-50" role="presentation">
+                                <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
+                                        aria-selected="true">Nuestra Misión</button>
+                            </li>
+                            <li class="nav-item w-50" role="presentation">
+                                <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
+                                        aria-selected="false">Nuestra Visión</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+                                <p class="mb-0">Queremos que cada jugador pueda acceder a los títulos que definieron una era. Nos aseguramos de que cada juego funcione perfectamente, limpiando conectores y reemplazando baterías si es necesario.</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                                <p class="mb-0">Aspiramos a ser la tienda de referencia mundial para coleccionistas de la portátil de doble pantalla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+                <h6 class="text-primary text-uppercase">Servicios</h6>
+                <h1 class="display-5 text-uppercase mb-0">Servicios para tu Consola</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="service-item bg-light d-flex p-4">
+                        <i class="flaticon-house display-1 text-primary me-4"></i>
+                        <div>
+                            <h5 class="text-uppercase mb-3">Compra y Venta</h5>
+                            <p>Te compramos tus juegos antiguos y te ofrecemos el mejor catálogo de segunda mano revisado.</p>
+                            <a class="text-primary text-uppercase" href="{{ path('servicio') }}">Leer Más<i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-item bg-light d-flex p-4">
+                        <i class="flaticon-vaccine display-1 text-primary me-4"></i>
+                        <div>
+                            <h5 class="text-uppercase mb-3">Servicio Técnico</h5>
+                            <p>Cambio de baterías internas de cartuchos (Save Data) y reparación de placas base.</p>
+                            <a class="text-primary text-uppercase" href="{{ path('servicio') }}">Leer Más<i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-offer my-5 py-5">
+        <div class="container py-5">
+            <div class="row gx-5 justify-content-start">
+                <div class="col-lg-7">
+                    <div class="border-start border-5 border-dark ps-5 mb-5">
+                        <h6 class="text-dark text-uppercase">Oferta Especial</h6>
+                        <h1 class="display-5 text-uppercase text-white mb-0">Ahorra 50% en tu primera consola restaurada</h1>
+                    </div>
+                    <p class="text-white mb-4">Solo por tiempo limitado, llévate una Nintendo DS Lite totalmente funcional.</p>
+                    <a href="{{ path('game-shop') }}" class="btn btn-light py-md-3 px-md-5 me-3">Comprar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sobre Nosotros - DS Classics{% endblock %}
+
+{% block body %}
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="{{ asset('img/about.jpg') }}" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="border-start border-5 border-primary ps-5 mb-5">
+                        <h6 class="text-primary text-uppercase">Sobre Nosotros</h6>
+                        <h1 class="display-5 text-uppercase mb-0">Pasión por la Doble Pantalla</h1>
+                    </div>
+                    <h4 class="text-body mb-4">Somos un grupo de coleccionistas dedicados a preservar el legado de la consola más vendida de la historia.</h4>
+                    <div class="bg-light p-4">
+                        <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item w-50" role="presentation">
+                                <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
+                                        aria-selected="true">Nuestra Misión</button>
+                            </li>
+                            <li class="nav-item w-50" role="presentation">
+                                <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill"
+                                        data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
+                                        aria-selected="false">Nuestra Visión</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+                                <p class="mb-0">Queremos evitar que grandes títulos caigan en el olvido. Restauramos cada cartucho y consola con el máximo cuidado.</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+                                <p class="mb-0">Aspiramos a crear la mayor comunidad hispanohablante de amantes de la Nintendo DS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-offer my-5 py-5">
+        <div class="container py-5">
+            <div class="row gx-5 justify-content-start">
+                <div class="col-lg-7">
+                    <div class="border-start border-5 border-dark ps-5 mb-5">
+                        <h6 class="text-dark text-uppercase">Oferta Especial</h6>
+                        <h1 class="display-5 text-uppercase text-white mb-0">50% Dto. en tu primera restauración</h1>
+                    </div>
+                    <p class="text-white mb-4">¿Tienes una consola vieja que no enciende o tiene la bisagra rota? Tráela y le daremos una segunda vida.</p>
+                    <a href="{{ path('contacto') }}" class="btn btn-light py-md-3 px-md-5 me-3">Reservar Cita</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
