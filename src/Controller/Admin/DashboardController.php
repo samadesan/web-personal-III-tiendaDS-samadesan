@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -34,6 +35,11 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         // Añadimos al menú el enlace al crud de Team
         yield MenuItem::linkToCrud('Team', 'fas fa-list', Team::class);
+        /*********************************************************************************/
+        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('Equipo', 'fas fa-users', Team::class);
+        // Añadimos la línea para Productos
+        yield MenuItem::linkToCrud('Productos', 'fas fa-gamepad', Product::class);
     }
 }
 

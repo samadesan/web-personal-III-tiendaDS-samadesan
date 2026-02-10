@@ -1,0 +1,13 @@
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Miembros del Equipo</h6>
+            <h1 class="display-5 text-uppercase mb-0">Expertos en Retro Gaming</h1>
+        </div>
+        <div class="owl-carousel team-carousel position-relative" style="padding-right: 25px;">
+            {% for teamMember in team %}
+                {{include('partials/team/_teamMember.html.twig', {'teamMember': teamMember})}}
+            {% endfor %}
+        </div>
+    </div>
+</div>

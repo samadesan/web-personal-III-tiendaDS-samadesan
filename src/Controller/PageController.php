@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
+use App\Entity\Team;
+use App\Service\ProductsService;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -9,17 +13,33 @@ use Symfony\Component\Routing\Attribute\Route;
 final class PageController extends AbstractController
 {
     #[Route('/', name: 'indice')]
-    public function indice(): Response
+    public function indice(ProductsService $productsService): Response
     {
-        return $this->render('page/index.html.twig');
+        // Ya no usamos $doctrine aquí, usamos el servicio
+        $products = $productsService->getProducts();
+
+        // También necesitamos el equipo para la home, así que podrías mantener
+        // ManagerRegistry o (mejor aún) crear un TeamService más adelante.
+        // Por ahora, para cumplir el reto de productos:
+
+        return $this->render('page/index.html.twig', [
+            'products' => $products
+        ]);
     }
 
     #[Route('/sobre-nosotros', name: 'about')]
-    public function about(): Response
+    public function about(ManagerRegistry $doctrine): Response
     {
-        return $this->render('page/about.html.twig');
-    }
+        // Obtenemos el repositorio de la entidad Team
+        $repository = $doctrine->getRepository(Team::class);
+        // Recuperamos todos los registros
+        $team = $repository->findAll();
 
+        // Pasamos la variable 'team' a la vista
+        return $this->render('page/about.html.twig', [
+            'team' => $team
+        ]);
+    }
     #[Route('/blog', name: 'blog')]
     public function blog(): Response
     {
@@ -39,9 +59,14 @@ final class PageController extends AbstractController
     }
 
     #[Route('/juegos', name: 'game-shop')]
-    public function gameShop(): Response
+    public function gameShop(ManagerRegistry $doctrine): Response
     {
-        return $this->render('page/game-shop.html.twig');
+        $repository = $doctrine->getRepository(Product::class);
+        $products = $repository->findAll();
+
+        return $this->render('page/game-shop.html.twig', [
+            'products' => $products
+        ]);
     }
 
     #[Route('/plan-socios', name: 'plan-socios')]
@@ -63,8 +88,13 @@ final class PageController extends AbstractController
     }
 
     #[Route('/equipo', name: 'equipo')]
-    public function equipo(): Response
+    public function equipo(ManagerRegistry $doctrine): Response
     {
-        return $this->render('page/team.html.twig');
+        $repository = $doctrine->getRepository(Team::class);
+        $team = $repository->findAll();
+
+        return $this->render('page/team.html.twig', [
+            'team' => $team
+        ]);
     }
 }
