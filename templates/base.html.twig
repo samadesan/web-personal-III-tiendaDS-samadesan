@@ -72,6 +72,16 @@
             <a href="{{ path('about') }}" class="nav-item nav-link {{ route == 'about' ? 'active' : '' }}">Nosotros</a>
             <a href="{{ path('servicio') }}" class="nav-item nav-link {{ route == 'servicio' ? 'active' : '' }}">Servicios</a>
             <a href="{{ path('game-shop') }}" class="nav-item nav-link {{ route == 'game-shop' ? 'active' : '' }}">Juegos</a>
+            <a href="{{ path('app_cart') }}" class="nav-item nav-link position-relative">
+                <i class="bi bi-cart fs-4 text-emerald"></i>
+                {% set cartCount = app.session.get('_cart')|length %}
+                {% if cartCount > 0 %}
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.5rem;">
+                        {{ cartCount }}
+                    </span>
+                {% endif %}
+            </a>
+
 
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Secciones</a>
@@ -168,13 +178,14 @@
 <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 {{ include('partials/product/_infoProducto.html.twig') }}
+{{ include('partials/product/_cartModal.html.twig') }}
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
 <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-<script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/dark-bg.js') }}"></script>
 {% block javascripts %}{% endblock %}
 </body>

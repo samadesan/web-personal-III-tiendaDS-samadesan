@@ -536,3 +536,54 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-5 {
 .blog-item a:hover i::after {
     width: 50px;
 }
+
+/* Definición del color Esmeralda DS Classics */
+:root {
+    --ds-emerald: #2ecc71;
+    --ds-emerald-hover: #27ae60;
+}
+
+/* Colores de texto y fondo */
+.text-emerald { color: var(--ds-emerald) !important; }
+.bg-emerald { background-color: var(--ds-emerald) !important; }
+
+/* Bordes personalizados */
+.border-emerald {
+    border-color: var(--ds-emerald) !important;
+}
+
+/* Botón Añadir al Carrito */
+.btn-emerald {
+    background-color: var(--ds-emerald);
+    border-color: var(--ds-emerald);
+    transition: all 0.3s ease;
+}
+
+.btn-emerald:hover {
+    background-color: var(--ds-emerald-hover);
+    border-color: var(--ds-emerald-hover);
+    transform: scale(1.05); /* Pequeño efecto de pulsación */
+}
+
+/* Ajuste para la línea vertical del título */
+.border-start.border-emerald {
+    border-left-color: var(--ds-emerald) !important;
+}
+
+.btn-emerald {
+    background-color: #2ecc71 !important;
+    border-color: #2ecc71 !important;
+}
+.text-emerald {
+    color: #2ecc71 !important;
+}
+
+.badge.bg-danger {
+    background-color: #ff4757 !important; /* Un rojo más vibrante tipo Nintendo */
+    border: 2px solid #1a1a1a; /* Borde oscuro para que resalte sobre el fondo */
+    padding: 0.35em 0.5em;
+}
+
+.text-emerald {
+    color: #2ecc71 !important;
+}

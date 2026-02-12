@@ -13,17 +13,14 @@ use Symfony\Component\Routing\Attribute\Route;
 final class PageController extends AbstractController
 {
     #[Route('/', name: 'indice')]
-    public function indice(ProductsService $productsService): Response
+    public function indice(ProductsService $productsService, ManagerRegistry $doctrine): Response
     {
-        // Ya no usamos $doctrine aquí, usamos el servicio
         $products = $productsService->getProducts();
-
-        // También necesitamos el equipo para la home, así que podrías mantener
-        // ManagerRegistry o (mejor aún) crear un TeamService más adelante.
-        // Por ahora, para cumplir el reto de productos:
-
+        $repository = $doctrine->getRepository(Team::class);
+        $team = $repository->findAll();
         return $this->render('page/index.html.twig', [
-            'products' => $products
+            'products' => $products,
+            'team' => $team
         ]);
     }
 

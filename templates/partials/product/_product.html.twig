@@ -1,4 +1,4 @@
-{# templates/partials/_product.html.twig #}
+{# templates/partials/product/_product.html.twig #}
 <div class="container-fluid py-5">
     <div class="container">
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
@@ -7,7 +7,7 @@
         </div>
         <div class="owl-carousel product-carousel">
             {% for product in products %}
-                {{ include('partials/product/_productItem.html.twig', {'product': product}) }}
+                {% include 'partials/product/_productItem.html.twig' %}
             {% endfor %}
         </div>
     </div>

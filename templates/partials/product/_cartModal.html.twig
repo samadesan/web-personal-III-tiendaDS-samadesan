@@ -1,0 +1,47 @@
+<div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark text-light border-emerald">
+            <div class="modal-header border-emerald">
+                <h5 class="modal-title text-emerald">¡Producto añadido al Carrito!</h5>
+                <button type="button" class="btn-close btn-close-white closeCart" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id='data-container'>
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center">
+                            <img id="cart-img" class='img-fluid rounded border border-emerald p-1' style='max-height:180px' src=''>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 id="cart-name" class='text-white text-uppercase mb-3'></h4>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <label class="me-3">Cantidad:</label>
+                                <input type='number' min='1' id='cart-quantity' value="1" class="form-control bg-dark text-white border-emerald w-25 cart-qty-input">
+                                <button type="button" class="btn btn-outline-emerald ms-2 btn-sm update-cart-btn">ACTUALIZAR</button>
+                            </div>
+
+                            <input type="hidden" id="base-price" value="0">
+
+                            <div class="mt-4">
+                                <p class="mb-1 text-secondary small text-uppercase">Subtotal:</p>
+                                <h2 class="text-emerald fw-bold">
+                                    <span id="cart-total-price">0.00</span>€
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-top border-secondary">
+                <div class="row w-100">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-light w-100 closeCart" data-bs-dismiss="modal">SEGUIR COMPRANDO</button>
+                    </div>
+                    <div class="col-6">
+                        <a href="{{ path('app_cart') }}" class="btn btn-emerald text-dark fw-bold w-100">VER CARRITO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
